@@ -5,6 +5,7 @@ import BodyPart from "./BodyPart";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
 import ExerciseCard from "./ExerciseCard";
+import Marquee from "react-fast-marquee";
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
@@ -28,7 +29,7 @@ const RightArrow = () => {
 
 const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, bodyParts }) => {
   return (
-    <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+    <Marquee LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map((item) => (
         <Box
           key={item.id || item}
@@ -47,7 +48,7 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, bodyParts }) => {
           )}
         </Box>
       ))}
-    </ScrollMenu>
+    </Marquee>
   );
 };
 
