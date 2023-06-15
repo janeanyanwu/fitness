@@ -26,7 +26,7 @@ const RightArrow = () => {
   );
 };
 
-const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, isBodyParts }) => {
+const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, bodyParts }) => {
   return (
     <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
       {data.map((item) => (
@@ -36,7 +36,7 @@ const HorizontalScrollbar = ({ data, bodyPart, setBodyPart, isBodyParts }) => {
           title={item.id || item}
           m="0 40px"
         >
-          {isBodyParts ? (
+          {bodyPart ? (
             <BodyPart
               item={item}
               bodyPart={bodyPart}
